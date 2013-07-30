@@ -95,9 +95,6 @@ NSString *const XMPPSRVResolverErrorDomain = @"XMPPSRVResolverErrorDomain";
 #pragma mark Properties
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@dynamic srvName;
-@dynamic timeout;
-
 - (NSString *)srvName
 {
 	__block NSString *result = nil;

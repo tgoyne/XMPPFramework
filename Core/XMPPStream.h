@@ -221,7 +221,7 @@ extern const NSTimeInterval XMPPStreamTimeoutNone;
  * The tag property allows you to associate user defined information with the stream.
  * Tag values are not used internally, and should not be used by xmpp modules.
 **/
-@property (readwrite, strong) id tag;
+@property (atomic, readwrite, strong) id tag;
 
 #if TARGET_OS_IPHONE
 

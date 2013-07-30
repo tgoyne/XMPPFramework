@@ -44,8 +44,8 @@ extern NSString *const XMPPStreamDidChangeMyJIDNotification;
  * They may also need to ensure the stream is in the proper state for their activity.
 **/
 
-@property (readonly) dispatch_queue_t xmppQueue;
-@property (readonly) void *xmppQueueTag;
+@property (atomic, readonly) dispatch_queue_t xmppQueue;
+@property (atomic, readonly) void *xmppQueueTag;
 @property (readonly) XMPPStreamState state;
 
 /**

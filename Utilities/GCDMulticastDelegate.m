@@ -42,12 +42,12 @@
 - (id)initWithDelegate:(id)delegate delegateQueue:(dispatch_queue_t)delegateQueue;
 
 #if __has_feature(objc_arc_weak)
-@property (/* atomic */ readwrite, weak) id delegate;
+@property (atomic, readwrite, weak) id delegate;
 #if !TARGET_OS_IPHONE
-@property (/* atomic */ readwrite, unsafe_unretained) id unsafeDelegate;
+@property (atomic, readwrite, unsafe_unretained) id unsafeDelegate;
 #endif
 #else
-@property (/* atomic */ readwrite, unsafe_unretained) id delegate;
+@property (atomic, readwrite, unsafe_unretained) id delegate;
 #endif
 
 @property (nonatomic, readonly) dispatch_queue_t delegateQueue;
