@@ -1,9 +1,7 @@
 #import <Foundation/Foundation.h>
 
-#if TARGET_OS_IPHONE
-  #import "DDXML.h"
-#endif
-
+#import "DDXML.h"
+#import "DDXMLElementAdditions.h"
 
 @interface NSXMLElement (XMPP)
 
@@ -14,7 +12,6 @@
  * The category methods below are more readable, and they actually work.
 **/
 
-+ (NSXMLElement *)elementWithName:(NSString *)name xmlns:(NSString *)ns;
 - (id)initWithName:(NSString *)name xmlns:(NSString *)ns;
 
 /**
@@ -28,32 +25,7 @@
  * Extracting a single element.
 **/
 
-- (NSXMLElement *)elementForName:(NSString *)name;
-- (NSXMLElement *)elementForName:(NSString *)name xmlns:(NSString *)xmlns;
 - (NSXMLElement *)elementForName:(NSString *)name xmlnsPrefix:(NSString *)xmlnsPrefix;
-
-/**
- * Working with the common xmpp xmlns value.
- * 
- * Use these instead of getting/setting the URI.
- * The category methods below are more readable, and they actually work.
-**/
-
-- (NSString *)xmlns;
-- (void)setXmlns:(NSString *)ns;
-
-/**
- * Convenience methods for printing xml elements with different styles.
-**/
-
-- (NSString *)prettyXMLString;
-- (NSString *)compactXMLString;
-
-/**
- * Convenience methods for adding attributes.
-**/
-
-- (void)addAttributeWithName:(NSString *)name stringValue:(NSString *)string;
 
 /**
  * Convenience methods for extracting attribute values in different formats.
@@ -90,8 +62,6 @@
 - (NSString *)attributeStringValueForName:(NSString *)name withDefaultValue:(NSString *)defaultValue;
 - (NSNumber *)attributeNumberIntValueForName:(NSString *)name withDefaultValue:(int)defaultValue;
 - (NSNumber *)attributeNumberBoolValueForName:(NSString *)name withDefaultValue:(BOOL)defaultValue;
-
-- (NSMutableDictionary *)attributesAsDictionary;
 
 /**
  * Convenience methods for extracting element values in different formats.
